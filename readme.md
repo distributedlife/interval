@@ -6,7 +6,7 @@ For self-sampling code.
 
 ## Show your sorcery
 ```javascript
-import execute from 'royal-sampler'
+import {execute} from 'royal-sampler'
 
 function mySweetFunction () {
   return 'sweet';

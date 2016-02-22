@@ -5,7 +5,7 @@ var sinon = require('sinon');
 
 var callback = sinon.spy();
 
-var execute = require('../lib/interval').default;
+var execute = require('../lib/royal-sampler').execute;
 
 describe('callbacks every interval', function () {
   beforeEach(function () {

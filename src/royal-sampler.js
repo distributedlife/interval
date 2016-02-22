@@ -31,7 +31,7 @@ function createThrottleFunc (callback, frequency) {
   };
 }
 
-export default function execute (fx) {
+export function execute (fx) {
   return {
     every: function every (n = 1) {
       function milliseconds () {
