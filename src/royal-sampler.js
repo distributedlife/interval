@@ -6,27 +6,27 @@ const minutesPerHour = 60;
 const secondsPerHour = secondsPerMinute * minutesPerHour;
 
 function createSampleFunc (callback, frequency) {
-  let timeSinceLast = 0;
+  let timeSinceLast = frequency;
 
-  return function sample (delta) {
+  return function sample (delta, ...props) {
     timeSinceLast += delta;
 
     if (timeSinceLast >= frequency) {
       timeSinceLast -= frequency;
-      return callback(...arguments);
+      return callback(delta, ...props);
     }
   };
 }
 
 function createThrottleFunc (callback, frequency) {
-  let callsSinceLast = 0;
+  let callsSinceLast = frequency;
 
-  return function throttle () {
+  return function throttle (...props) {
     callsSinceLast += 1;
 
     if (callsSinceLast >= frequency) {
       callsSinceLast = 0;
-      return callback(...arguments);
+      return callback(...props);
     }
   };
 }
